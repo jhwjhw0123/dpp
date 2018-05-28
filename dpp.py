@@ -40,6 +40,7 @@ def sample(items, L, max_nb_iterations=1000, rng=np.random):
     Application to Clustering, Byungkon Kang, NIPS 2013)
     """
     Y = rng.choice((True, False), size=len(items))
+    # the following codes are to select the Y principle matrix of the L kernel
     L_Y = L[Y, :]
     L_Y = L_Y[:, Y]
     L_Y_inv = np.linalg.inv(L_Y)
